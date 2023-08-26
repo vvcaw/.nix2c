@@ -1,4 +1,5 @@
 #!/bin/sh
 pushd ~/.nix2c
-home-manager switch -f ./users/vvcaw/home.nix
+nix build .#homeManagerConfigurations.vvcaw.activationPackage
+./result/activate
 popd
