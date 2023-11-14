@@ -87,6 +87,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Custom udev rules for Stlink
+  services.udev.packages = [ pkgs.stlink ];
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -111,7 +114,7 @@
   users.users.vvcaw = {
     isNormalUser = true;
     description = "Eric Elflein";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
     packages = with pkgs; [
       firefox
     ];
@@ -120,6 +123,7 @@
 
   # Enable fish shell
   programs.fish.enable = true;
+  environment.shells = [ pkgs.fish ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
