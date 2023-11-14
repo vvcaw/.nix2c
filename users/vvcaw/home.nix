@@ -23,6 +23,11 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # IDE
+    jetbrains.webstorm
+    jetbrains.clion
+    jetbrains.idea-ultimate
+
     kitty
     zlib
     stack
