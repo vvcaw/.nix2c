@@ -18,6 +18,9 @@
   nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = (_:true);
+    permittedInsecurePackages = [
+             	"electron-25.9.0"
+              ];
   };
 
   # The home.packages option allows you to install Nix packages into your
