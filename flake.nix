@@ -28,7 +28,7 @@
     };
 
     nixosConfigurations = {
-      framebox = lib.nixosSystem { # This gets selected by hostname or by `.#framebox`
+      default = lib.nixosSystem { # This gets selected by hostname or by `.#default`
         inherit system;
 
         modules = [
