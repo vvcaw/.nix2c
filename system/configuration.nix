@@ -14,17 +14,23 @@
 
       # Get shell
       ./sh/fish.nix
+
+      # Enable Wayland (TODO)
+      #./desktop/wayland.nix
       
       # Enable XORG
       ./desktop/xorg.nix
 
       # Enable Gnome by default
       #./desktop/gnome.nix
-      ./desktop/kde.nix
-      #./desktop/hyprland.nix
+      #./desktop/kde.nix
+      ./desktop/hyprland.nix
 
       # Get bootloader
       ./bootloader/grub.nix
+
+      # Graphics n' stuff
+      ./graphics.nix
     ];
 
   # Set your time zone.
