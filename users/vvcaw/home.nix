@@ -1,6 +1,29 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./editor/jetbrains.nix
+    ./editor/vscode.nix
+    #./editor/doom-emacs.nix
+
+    ./fonts/fira-code.nix
+
+    ./sh/fish.nix
+
+    ./utils/c.nix
+    ./utils/git.nix
+    ./utils/haskell.nix
+    ./utils/lazygit.nix
+
+    ./browser/brave.nix
+
+    #./apps/discord.nix
+    ./apps/element.nix
+    ./apps/obsidian.nix
+    ./apps/spotify.nix
+    ./apps/kitty.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "vvcaw";
@@ -19,65 +42,8 @@
     allowUnfree = true;
     allowUnfreePredicate = (_:true);
     permittedInsecurePackages = [
-             	"electron-25.9.0"
+             	"electron-25.9.0" # Temporary fix as electron 25 is EOL.
               ];
-  };
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = with pkgs; [
-    # IDE
-    jetbrains.webstorm
-    jetbrains.clion
-    jetbrains.idea-ultimate
-
-    kitty
-    zlib
-    stack
-    git
-    lazygit
-    brave
-    vscode
-    element-desktop
-    obsidian
-    spotify
-    gnome.gnome-tweaks
-    gnome-extension-manager
-    gnomeExtensions.switcher
-    gnomeExtensions.tiling-assistant
-
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    ".config/kitty".source = .dotfiles/kitty;
-
-    ".gitconfig".source = .dotfiles/git/.gitconfig;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
   };
 
   # You can also manage environment variables but you will have to manually
@@ -94,20 +60,5 @@
     # EDITOR = "emacs";
   };
 
-  programs = {
-    # Fish shell
-    fish = {
-      enable = true;
-      interactiveShellInit = ''
-        set fish_greeting #Disable greeting
-      '';
-      plugins = [
-        { name = "fishplugin-z-unstable"; src = pkgs.fishPlugins.z.src; }
-        { name = "fishplugin-pure"; src = pkgs.fishPlugins.pure.src; }
-      ];
-    };
-
-    # Let Home Manager install and manage itself.
-    home-manager.enable = true; 
-  };
+  programs.home-manager.enable = true;
 }
