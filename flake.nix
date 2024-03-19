@@ -28,7 +28,7 @@
     };
 
     nixosConfigurations = {
-      default = lib.nixosSystem { # This gets selected by hostname or by `.#default`
+      matryoshka = lib.nixosSystem { # This gets selected by hostname or by `.#matryoshka`
         inherit system;
 
         modules = [

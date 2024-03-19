@@ -1,4 +1,4 @@
 #!/bin/sh
 pushd ~/.nix2c
-sudo nixos-rebuild switch --flake .#default
+sudo nixos-rebuild switch --flake .#matryoshka
 popd
