@@ -113,7 +113,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vvcaw = {
     isNormalUser = true;
-    description = "Eric Elflein";
+    description = "Eric";
     extraGroups = [ "networkmanager" "wheel" "plugdev" ];
     packages = with pkgs; [
       firefox
