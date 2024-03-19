@@ -9,3 +9,6 @@ Make sure to use the hardware configuration file that was auto generated on firs
 
 ### Host-Dependent Setup
 I use multiple branches for the given systems, so check out whatever branch you want for the given system.
+
+### Workflow for updating the config in any way
+All changes that are not ONLY host specific should be made on the main branch and then merged into the specific host paths.
