@@ -23,6 +23,7 @@
     ./apps/spotify.nix
     ./apps/kitty.nix
     ./apps/rofi.nix
+    ./apps/dunst.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
