@@ -19,28 +19,18 @@
 
     eww
     # Notification manager (pure wayland)
-    mako
-    libnotify
+    dunst
+
+    # Wallpaper
     swww
   
-    # Wallpaper
     rofi-wayland
-
-    # Display manager
-    greetd.tuigreet
+    networkmanagerapplet
   ];
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Enable Display Manager
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' --cmd Hyprland";
-        user = "greeter";
-      };
-    };
-  };
+  services.xserver.displayManager.gdm.enable = true;
 }
