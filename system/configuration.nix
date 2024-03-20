@@ -74,6 +74,10 @@
     #media-session.enable = true;
   };
 
+  # Usb utils
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vvcaw = {
     isNormalUser = true;
@@ -94,6 +98,9 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     cachix
     wget
+    usbutils
+    udiskie
+    udisks
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
