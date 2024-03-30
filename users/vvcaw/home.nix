@@ -11,6 +11,7 @@
     ./sh/fish.nix
 
     ./utils/c.nix
+    ./utils/nix.nix
     ./utils/git.nix
     ./utils/haskell.nix
     ./utils/lazygit.nix
