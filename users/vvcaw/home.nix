@@ -6,6 +6,7 @@
     ./editor/vscode.nix
     ./editor/doom-emacs.nix
     ./editor/nixvim.nix
+    ./editor/neovide.nix
 
     ./fonts/fira-code.nix
 
