@@ -5,5 +5,6 @@
         jetbrains.webstorm
         jetbrains.clion
         jetbrains.idea-ultimate
+        android-studio
     ];
 }
