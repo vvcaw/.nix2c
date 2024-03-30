@@ -5,6 +5,7 @@
     ./editor/jetbrains.nix
     ./editor/vscode.nix
     #./editor/doom-emacs.nix
+    ./editor/nixvim.nix
 
     ./fonts/fira-code.nix
 
