@@ -306,9 +306,9 @@
       inlayHints.maxLenAlign = false;
       inlayHints.maxLenAlignPadding = 1;
       inlayHints.onlyCurrentLine = false;
-      inlayHints.onlyCurrentLineAutocmd = "CursorHold";
+      inlayHints.onlyCurrentLineAutocmd = "CursorMoved";
       inlayHints.otherHintsPrefix = "=> ";
-      inlayHints.parameterHintsPrefix = "<-";
+      inlayHints.parameterHintsPrefix = "<- ";
       inlayHints.priority = 100;
       inlayHints.rightAlign = false;
       inlayHints.rightAlignPadding = 7;
