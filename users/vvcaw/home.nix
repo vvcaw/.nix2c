@@ -4,13 +4,15 @@
   imports = [
     ./editor/jetbrains.nix
     ./editor/vscode.nix
-    #./editor/doom-emacs.nix
+    ./editor/doom-emacs.nix
+    ./editor/nixvim.nix
 
     ./fonts/fira-code.nix
 
     ./sh/fish.nix
 
     ./utils/c.nix
+    ./utils/nix.nix
     ./utils/git.nix
     ./utils/haskell.nix
     ./utils/lazygit.nix
