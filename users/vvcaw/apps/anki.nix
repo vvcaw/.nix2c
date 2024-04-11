@@ -2,7 +2,6 @@
 
 {
     home.packages = with pkgs; [
-        alejandra
-	etcher
+        anki-bin
     ];
 }

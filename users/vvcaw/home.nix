@@ -17,10 +17,12 @@
     ./utils/git.nix
     ./utils/haskell.nix
     ./utils/lazygit.nix
+    ./utils/wmctrl.nix
 
     ./browser/brave.nix
 
-    #./apps/discord.nix
+    ./apps/discord.nix
+    ./apps/anki.nix
     ./apps/element.nix
     ./apps/obsidian.nix
     ./apps/spotify.nix

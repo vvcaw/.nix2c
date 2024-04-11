@@ -2,8 +2,8 @@
 
 {
     home.packages = with pkgs; [
+        jetbrains-toolbox
         jetbrains.webstorm
-        jetbrains.clion
         jetbrains.idea-ultimate
         android-studio
     ];
