@@ -23,8 +23,8 @@
 
       # Enable Gnome by default
       #./desktop/gnome.nix
-      #./desktop/kde.nix
-      ./desktop/hyprland.nix
+      ./desktop/kde.nix
+      #./desktop/hyprland.nix
 
       # Get bootloader
       ./bootloader/grub.nix
@@ -32,6 +32,9 @@
       # Graphics n' stuff
       ./graphics.nix
     ];
+
+  # Run unpatched binaries.
+  programs.nix-ld.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -116,9 +119,11 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  networking.networkmanager.enable = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedUDPPorts = [ 67 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

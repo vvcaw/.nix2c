@@ -267,6 +267,13 @@
             vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
             vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
             vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>h', '<cmd>ClangdSwitchSourceHeader<CR>', opts)
+            vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ih', '<cmd>lua require("clangd_extensions.inlay_hints").set_inlay_hints()<CR>', opts)
+
+	    -- Mappings for telescope
+            vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>lf', '<cmd>lua require(\'telescope.builtin\').lsp_document_symbols({ symbols=\'function\' })<CR>', opts)
+            vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wf', '<cmd>lua require(\'telescope.builtin\').lsp_workspace_symbols({ symbols=\'function\' })<CR>', opts)
+            vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ls', '<cmd>lua require(\'telescope.builtin\').lsp_document_symbols({})<CR>', opts)
+            vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>lr', '<cmd>lua require(\'telescope.builtin\').lsp_references()<CR>', opts)
           '';
         };
 

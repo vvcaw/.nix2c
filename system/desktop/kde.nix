@@ -19,4 +19,11 @@
 
   # Start KDE in wayland session (this doesn't work I think).
   services.xserver.displayManager.defaultSession = "plasma";
+
+  environment.sessionVariables = {
+    # Cursor gets invisible.
+    WLR_NO_HARDWARE_CURSORS = "1";
+    # Hints electron apps to use wayland.
+    NIXOS_OZONE_WL = "1";
+  };
 }
